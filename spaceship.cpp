@@ -1,4 +1,4 @@
-#include "otomobil.h"
+#include "Spaceship.h"
 
 
 Spaceship::Spaceship(string _name, int _hp, int _fuel, int cash, int _type) {
@@ -9,6 +9,7 @@ Spaceship::Spaceship(string _name, int _hp, int _fuel, int cash, int _type) {
 	cout << endl;
 	pcash = new int(cash); // *pcash=cash de yazilabilirdi.
 	type = _type;
+
 };
 
 
