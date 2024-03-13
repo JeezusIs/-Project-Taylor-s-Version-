@@ -16,15 +16,16 @@ public:
 	int hasarKatsayisi2 = damagetaken * 1;
 	int hasarKatsayisi3 = damagetaken * 0.5;
 
+
 	Spaceship(string _name = "", int _hp = 100, int _fuel = 100, int cash = 0, int _type);
 };
 
 
-class HizliGemi: public Spaceship{
+class HizliGemi : public Spaceship {
 public:
-	int _hp1;
-	int _fuel1;
-	int cash1;
+	int _hp1 = hp;
+	int _fuel1 = fuel;
+	int cash1 = *pcash;
 	int _type;
 	int _hasarKatsayi1;
 
@@ -33,11 +34,11 @@ public:
 
 
 
-class DengeliGemi: public Spaceship{
+class DengeliGemi : public Spaceship {
 public:
-	int _hp2;
-	int _fuel2;
-	int cash2;
+	int _hp2 = hp;
+	int _fuel2 = fuel;
+	int cash2 = *pcash;
 	int _type;
 	int _hasarKatsayisi2;
 
@@ -46,11 +47,11 @@ public:
 
 
 
-class GucluGemi: public Spaceship{
+class GucluGemi : public Spaceship {
 public:
-	int _hp3;
-	int _fuel3;
-	int cash3;
+	int _hp3 = hp;
+	int _fuel3 = fuel;
+	int cash3 = *pcash;
 	int _type;
 	int _hasarKatsayisi3;
 
