@@ -11,8 +11,8 @@ public:
     void setSpaceship(std::shared_ptr<Spaceship> Ship){
         selectedShip=Ship;
     }
-    void AstreoidBelt();
-    void AbondenedPlanet();
-    void SpacePirates();
+    void AstreoidBelt(std::shared_ptr<Spaceship> Ship);
+    void AbondenedPlanet(std::shared_ptr<Spaceship> Ship);
+    void SpacePirates(std::shared_ptr<Spaceship> Ship);
 };
 #endif //UNTITLED2_EVENT_H

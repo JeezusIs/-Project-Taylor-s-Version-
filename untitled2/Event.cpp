@@ -15,7 +15,7 @@ class PowerfulShip;
 class BalancedShip;
 
 
-void events::AstreoidBelt() {
+void events::AstreoidBelt(std::shared_ptr<Spaceship> selectedShip) {
     int possibility;
     int startOfRange=1;
     int endOfRange=2;
@@ -38,7 +38,7 @@ void events::AstreoidBelt() {
 };
 
 
-void events::AbondenedPlanet() {
+void events::AbondenedPlanet(std::shared_ptr<Spaceship> selectedShip) {
     int posibility, i;
     int startOfRange=0;
     int endOfRange=2;
@@ -57,7 +57,7 @@ void events::AbondenedPlanet() {
     }
 };
 
-void events::SpacePirates() {
+void events::SpacePirates(std::shared_ptr<Spaceship> selectedShip) {
     int posibility1, posibility2, dialogueOption;
     int IWantToFlee;
 
@@ -117,9 +117,8 @@ void events::SpacePirates() {
                 selectedShip->setFuel(selectedShip->getFuel() - 33);
             }
             else {
-                std::cout << "We've failed to flee.\n";
-                selectedShip->setFuel(selectedShip->getFuel() - 33);
-                events::SpacePirates();
+                std::cout << "We've failed to flee.\n";selectedShip->setFuel(selectedShip->getFuel() - 33);
+                events::SpacePirates(selectedShip);
             }
         }
     }

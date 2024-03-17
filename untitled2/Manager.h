@@ -14,7 +14,7 @@ class Spaceship;
 int  RandomNumberGenerator(int start,int end);
 std::shared_ptr<Spaceship> getSelectedShip();
 void RandomEventGenerator(std::shared_ptr<Spaceship>Ship);
-void ScoreCalculator();
+void ScoreCalculator(std::shared_ptr<Spaceship> selectedShip);
 
 
 

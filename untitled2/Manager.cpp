@@ -53,47 +53,39 @@ std::shared_ptr<Spaceship>getSelectedShip() {
 void RandomEventGenerator( std::shared_ptr<Spaceship> getSelectedShip) {
     getSelectedShip->status();
     int eventCounter{0}, eventFirst{1}, eventLast{3}, totalEvent{5};
-    do {
+    while((eventCounter < totalEvent)&&(getSelectedShip->getFuel()>=1)){
         int eventNumber = RandomNumberGenerator(eventFirst, eventLast);
         if(eventNumber==1){
             ++eventCounter;
             events MyEvent;
-            MyEvent.AstreoidBelt();
+            MyEvent.AstreoidBelt(getSelectedShip);
             getSelectedShip->status();
+            std::cout<<"Event counter: "<<eventCounter<<"\n";
         }
         else if(eventNumber==2){
             ++eventCounter;
             events my_event;
-            my_event.AbondenedPlanet();
+            my_event.AbondenedPlanet(getSelectedShip);
             getSelectedShip->status();
+            std::cout<<"Event counter: "<<eventCounter<<"\n";
         }
         else if(eventNumber==3){
             ++eventCounter;
             events myEvent;
-            myEvent.SpacePirates();
+            myEvent.SpacePirates(getSelectedShip);
             getSelectedShip->status();
+            std::cout<<"Event counter: "<<eventCounter<<"\n";
         }
 
-        if (getSelectedShip->getFuel() <= 1) {
-            std::cout << "Low fuel! GAME OVER...\n";
-            break;
-        } else if (getSelectedShip->getHp() <= 1) {
-            std::cout << "Low health! GAME OVER...\n";
-        }
-    } while ((eventCounter < totalEvent)&&(getSelectedShip->getFuel()<=1));
-    {
-        if (eventCounter == totalEvent) {
-            std::cout << "Congrats, you've finished the game!\n";
-        }
     }
 }
 
-void ScoreCalculator() {
-    std::shared_ptr<Spaceship> selectedShip = nullptr;
+
+void ScoreCalculator(std::shared_ptr<Spaceship> selectedShip) {
     int healthMultiplier{ 10 }, fuelMultiplier{ 5 }, cashMultiplier{ 10 };
     float endGameScore;
     endGameScore = (selectedShip->getHp() * healthMultiplier) + (selectedShip->getFuel() * fuelMultiplier) + (selectedShip->getCash() * cashMultiplier);
-    std::cout<<"Your Score is"<<endGameScore;
+    std::cout<<"Your Score is"<<endGameScore<<"\n";
 
 }
 
