@@ -55,8 +55,14 @@ build CMakeFiles/untitled1.dir/main.cpp.o: CXX_COMPILER__untitled1_unscanned_Deb
   OBJECT_DIR = CMakeFiles/untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled1.dir
 
-build CMakeFiles/untitled1.dir/Spaceship.cpp.o: CXX_COMPILER__untitled1_unscanned_Debug /Users/duygukaser/CLionProjects/untitled1/Spaceship.cpp || cmake_object_order_depends_target_untitled1
-  DEP_FILE = CMakeFiles/untitled1.dir/Spaceship.cpp.o.d
+build CMakeFiles/untitled1.dir/functions.cpp.o: CXX_COMPILER__untitled1_unscanned_Debug /Users/duygukaser/CLionProjects/untitled1/functions.cpp || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/functions.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.1 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir
+
+build CMakeFiles/untitled1.dir/Event.cpp.o: CXX_COMPILER__untitled1_unscanned_Debug /Users/duygukaser/CLionProjects/untitled1/Event.cpp || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/Event.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.1 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled1.dir
@@ -69,7 +75,7 @@ build CMakeFiles/untitled1.dir/Spaceship.cpp.o: CXX_COMPILER__untitled1_unscanne
 #############################################
 # Link the executable untitled1
 
-build untitled1: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/Spaceship.cpp.o
+build untitled1: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/functions.cpp.o CMakeFiles/untitled1.dir/Event.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.1
   OBJECT_DIR = CMakeFiles/untitled1.dir
   POST_BUILD = :

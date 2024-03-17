@@ -4,53 +4,49 @@
 
 #ifndef UNTITLED1_SPACESHIP_H
 #define UNTITLED1_SPACESHIP_H
+
 #include <iostream>
+#include "functions.h"
+
+
 class Spaceship {
 public:
-    int hp;
-    int fuel;
-    int* pcash;
-    int type;
-    int damagetaken = 33;
-    int hasarKatsayisi1 = damagetaken * 1.5;
-    int hasarKatsayisi2 = damagetaken * 1;
-    int hasarKatsayisi3 = damagetaken * 0.5;
-    Spaceship( int _hp = 100, int _fuel = 100, int cash = 0, int _type){}
+    Spaceship() = default;
+    Spaceship(int _flee, float _damageMultiplier) : flee_posibility{ _flee }, damageMultiplier{ _damageMultiplier } {};
+
+    inline float getHp() const {
+        return Hp;
+    }
+    inline int getFuel() const {
+        return fuel;
+    }
+    inline int getCash() const {
+        return cash;
+    }
+    inline void setHp(float _newHp) {
+        Hp = _newHp;
+    }
+    inline void setFuel(int _newFuel) {
+        fuel = _newFuel;
+    }
+    inline void setCash(int _newCash) {
+        cash = _newCash;
+    }
+    inline float getDamageMultiplier() const {
+        return damageMultiplier;
+    }
+    inline int getEscapePossibility() const {
+        return flee_posibility;
+    }
+
+    virtual void status();
 
 
-};
-class HizliGemi: public Spaceship{
-public:
-    int _hp1;
-    int _fuel1;
-    int cash1;
-    int _type;
-    int _hasarKatsayi1;
-
-    HizliGemi(int _hp1, int _fuel1, int cash1, int _type, int _hasarKatsayisi1);
-};
-
-
-
-class DengeliGemi: public Spaceship{
-public:
-    int _hp2;
-    int _fuel2;
-    int cash2;
-    int _type;
-    int _hasarKatsayisi2;
-
-    DengeliGemi(int _hp2, int _fuel2, int cash2, int _type, int _hasarKatsayisi2);
-};
-
-class GucluGemi: public Spaceship{
-public:
-    int _hp3;
-    int _fuel3;
-    int cash3;
-    int _type;
-    int _hasarKatsayisi3;
-
-    GucluGemi(int _hp3, int _fuel3, int cash3, int _type, int _hasarKatsayisi3);
+protected:
+    float Hp{ 100 };
+    int fuel{ 100 };
+    int cash{ 0 };
+    float damageMultiplier{ 0 };
+    int flee_posibility{ 0 };
 };
 #endif //UNTITLED1_SPACESHIP_H
